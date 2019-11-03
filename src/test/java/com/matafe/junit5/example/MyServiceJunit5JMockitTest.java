@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
-import com.matafe.junit5.JMockitJUnit5Extension;
+import com.matafe.junit5.JMockit141Extension;
 
 import mockit.Expectations;
 import mockit.Tested;
@@ -21,7 +21,7 @@ import mockit.Tested;
  * 
  * @author matafe@gmail.com
  */
-@ExtendWith(JMockitJUnit5Extension.class)
+@ExtendWith(JMockit141Extension.class)
 public class MyServiceJunit5JMockitTest {
 
 	@Tested
@@ -59,9 +59,9 @@ public class MyServiceJunit5JMockitTest {
 	public void testGetCompanyNameFromSupport() {
 
 		final String dbObject = "PE:9999:99991";
-
+		
 		// partial mock -> MySupport
-		new Expectations(MySupport.class) {
+		new Expectations(new MySupport()) {
 			{
 				MySupport.getSomethingFromDatabase();
 				result = dbObject;

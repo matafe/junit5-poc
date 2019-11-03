@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2006 JMockit developers
+ * This file is subject to the terms of the MIT license (see LICENSE.txt).
+ */
 package com.matafe.junit5;
 
 import static mockit.internal.util.StackTrace.filterStackTrace;
@@ -26,23 +30,18 @@ import mockit.internal.expectations.RecordAndReplayExecution;
 import mockit.internal.state.SavePoint;
 import mockit.internal.state.TestRun;
 
-public final class JMockitJUnit5Extension extends TestRunnerDecorator implements BeforeAllCallback, AfterAllCallback,
+public final class JMockit141Extension extends TestRunnerDecorator implements BeforeAllCallback, AfterAllCallback,
 		TestInstancePostProcessor, BeforeEachCallback, AfterEachCallback, BeforeTestExecutionCallback,
 		AfterTestExecutionCallback, ParameterResolver, TestExecutionExceptionHandler {
-
 	private SavePoint savePointForTestClass;
-
 	private SavePoint savePointForTest;
-
 	private SavePoint savePointForTestMethod;
-
 	private Throwable thrownByTest;
 	private Object[] parameterValues;
 
 	@Override
 	public void beforeAll(ExtensionContext context) {
 		if (isRegularTestClass(context)) {
-
 			Class<?> testClass = context.getTestClass().orElse(null);
 			savePointForTestClass = new SavePoint();
 			TestRun.setCurrentTestClass(testClass);

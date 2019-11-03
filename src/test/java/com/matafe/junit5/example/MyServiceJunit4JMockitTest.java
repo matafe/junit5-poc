@@ -9,18 +9,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Tested;
-import mockit.integration.junit4.JMockit;
 
 /**
  * Junit4 + JMockit 1.41 Unit Test
  * 
  * @author matafe@gmail.com
  */
-@RunWith(JMockit.class)
+//@RunWith(JMockit.class)
 public class MyServiceJunit4JMockitTest {
 
 	@Tested
@@ -59,7 +57,7 @@ public class MyServiceJunit4JMockitTest {
 		final String dbObject = "PE:9999:99991";
 
 		// partial mock -> MySupport
-		new Expectations(MySupport.class) {
+		new Expectations(new MySupport()) {
 			{
 				MySupport.getSomethingFromDatabase();
 				result = dbObject;
