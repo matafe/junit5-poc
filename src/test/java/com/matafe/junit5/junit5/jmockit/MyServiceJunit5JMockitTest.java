@@ -1,4 +1,4 @@
-package com.matafe.junit5.example;
+package com.matafe.junit5.junit5.jmockit;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 
@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import com.matafe.junit5.JMockit141Extension;
+import com.matafe.junit5.example.MyService;
+import com.matafe.junit5.example.MySupport;
 
 import mockit.Expectations;
 import mockit.Tested;

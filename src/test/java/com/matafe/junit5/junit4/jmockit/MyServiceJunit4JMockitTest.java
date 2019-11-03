@@ -1,4 +1,4 @@
-package com.matafe.junit5.example;
+package com.matafe.junit5.junit4.jmockit;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -10,6 +10,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import com.matafe.junit5.example.MyService;
+import com.matafe.junit5.example.MySupport;
 
 import mockit.Expectations;
 import mockit.Tested;

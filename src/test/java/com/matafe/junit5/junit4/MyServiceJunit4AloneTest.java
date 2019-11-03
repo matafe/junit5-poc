@@ -1,4 +1,4 @@
-package com.matafe.junit5.example;
+package com.matafe.junit5.junit4;
 
 import org.junit.After;
 import org.junit.AfterClass;
