@@ -9,16 +9,18 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import mockit.Expectations;
 import mockit.Tested;
+import mockit.integration.junit4.JMockit;
 
 /**
  * Junit4 + JMockit 1.41 Unit Test
  * 
  * @author matafe@gmail.com
  */
-//@RunWith(JMockit.class)
+@RunWith(JMockit.class)
 public class MyServiceJunit4JMockitTest {
 
 	@Tested
