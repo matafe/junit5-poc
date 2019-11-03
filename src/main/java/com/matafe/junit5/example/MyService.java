@@ -1,5 +1,9 @@
 package com.matafe.junit5.example;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 /**
  * Simple Service
  * 
@@ -7,8 +11,20 @@ package com.matafe.junit5.example;
  */
 public class MyService {
 
+	public String getCompanyName(String name) {
+		Objects.requireNonNull(name, "Name can not be null!");
+		return name;
+	}
+
 	public String getCompanyName() {
-		return "XPTO";
+		return getCompanyName("XPTO");
+	}
+
+	public Map<String, String> getCompanyDetails() {
+		Map<String, String> details = new HashMap<>(2);
+		details.put("address", "Malahide Road");
+		details.put("city", "Dublin");
+		return details;
 	}
 
 	public String getCompanyNameFromSupport4() {
@@ -21,5 +37,9 @@ public class MyService {
 
 	private String getCompanyNameFromSupport(int i) {
 		return getCompanyName() + "-" + MySupport.getSomethingFromDatabase() + i;
+	}
+
+	public int multiply(int i, int j) {
+		return i * j;
 	}
 }
